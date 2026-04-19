@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Помощь гостю</title>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+}
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 15px;
+    width: 250px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#answer {
+    margin-top: 30px;
+    font-size: 18px;
+    white-space: pre-line;
+}
+</style>
+</head>
+<body>
+
+<h2>Чем могу Вам помочь?</h2>
+
+<button onclick="show('checkin')">🕒 Время заезда/выезда</button>
+<button onclick="show('wifi')">📶 Wi-Fi</button>
+<button onclick="show('trash')">🗑️ Мусор</button>
+<button onclick="show('tech')">⚙️ Техника</button>
+
+<div id="answer"></div>
+
+<script>
+function show(type) {
+    let text = "";
+
+    switch(type) {
+        case 'checkin':
+            text = "Заезд с 12:00\nВыезд до 15:00";
+            break;
+        case 'wifi':
+            text = "Wi-Fi бесплатный.\nДанные указаны в инструкции при заселении.";
+            break;
+        case 'trash':
+            text = "Контейнеры находятся во дворе или на первом этаже.";
+            break;
+        case 'tech':
+            text = "Инструкции по технике находятся в апартаментах.\nЕсли что-то непонятно — свяжитесь с администратором.";
+            break;
+    }
+
+    document.getElementById("answer").innerText = text;
+}
+</script>
+
+</body>
+</html>
